@@ -168,13 +168,13 @@ def add_product(request):
 
 def payment(request):
    
-    if request.method == "POST":
+    # if request.method == "POST":
        
-        user = request.user
-        name = request.POST['name']
-        description = request.POST['description']
-        amount = request.POST['amount']
-        proof = request.FILES['proof']
+    #     user = request.user
+    #     name = request.POST['name']
+    #     description = request.POST['description']
+    #     amount = request.POST['amount']
+    #     proof = request.FILES['proof']
     
             
             
@@ -182,33 +182,33 @@ def payment(request):
         
 
         
-        payrecords = PayRecord.objects.create(
-            user = user,
-            account_name = name,
-            amount = amount,
-            description = description,
-            proof = proof,
-            created = timezone.now()
+    #     payrecords = PayRecord.objects.create(
+    #         user = user,
+    #         account_name = name,
+    #         amount = amount,
+    #         description = description,
+    #         proof = proof,
+    #         created = timezone.now()
           
-        )
+    #     )
         
-        payrecords.save()
+    #     payrecords.save()
         
-        messages.success(request, 'Payment was Made ')
+    #     messages.success(request, 'Payment was Made ')
 
-        return redirect( 'payment',)
+    #     return redirect( 'payment',)
     
     
-    user_profile = Profile.objects.get(username = request.user.username)
+    # user_profile = Profile.objects.get(username = request.user.username)
     
-    context = {
-        'profile': user_profile,
-        # 'form': form,
+    # context = {
+    #     'profile': user_profile,
+    #     # 'form': form,
         
         
-    }
+    # }
 
-    return render(request, "dashboard/payment.html", context)
+    return render(request, "dashboard/payment.html")
 
 
 

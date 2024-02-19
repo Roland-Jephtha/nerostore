@@ -19,11 +19,16 @@
                
                     <div class="single-add-property">
                       <center>
-                        <h3>Make Payment</h3>
+                        <h2 style = "color:green">Make Payment</h2>
 
                       </center>  
                         <div class="property-form-group">
-                            <form action="" method="post" enctype="multipart/form-data">
+
+
+
+                        
+                              
+                            <form action="" method="post" enctype="multipart/form-data" id="paymentForm">
                                 {%csrf_token%}
 
                             <div class="form">
@@ -31,38 +36,37 @@
                                 <div class="row">
                                     <div class="col-md-12">
 
-                                        <p>
-                                            <!-- <label for="title">Property Title</label> -->
-                                            <input type="text" name="name" id="title" class="form-control" placeholder="Enter Account Name" required>
-                                        </p>
+                                        <input type="hidden" id="email-address" class="form-control" value = "{{user.email}}" />
+
+            
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p>
                                             <!-- <label for="description">Product Description</label> -->
-                                            <textarea id="description" name="description" class="form-control" placeholder="Description of Payment" required></textarea>
+                                            {% comment %} <textarea id="description" name="description" class="form-control" placeholder="Description of Payment" required></textarea> {% endcomment %}
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p>
-                                            <input type="number" name="amount" id="title" class="form-control" placeholder="Enter Amount Paid" required>
-                                        </p>
+
+                                        <h4>Store Payment is N2,000</h4>
+
+
+                                            <input type="hidden" id="last-name" value = "{{user.username}}"/>    
+                                            
+                                            <input type="hidden" id="amount" value = "2000" />
+
+                                            <input type="hidden" id="first-name" value = "{{user.username}}"/>
+
                                     </div>
                                 </div>
 
                                 
                            
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            <label for="description">Proof (Payment Reciept) *</label>
-                                            <input type="file" name="proof" id="" class="form-control" required />
-                                        </p>
-                                    </div>
-                                </div>
+                        
                        
                       
                                 <!-- <div>
@@ -71,7 +75,8 @@
                                 </div> -->
 
                             </div>
-                            <button class="btn btn-success">submit</button> <br> <br>
+                            <button type="submit" onclick="payWithPaystack()" class="btn btn-success"> Pay Now</button>
+                     <br> <br>
 
 
 
@@ -79,17 +84,7 @@
 
                         </form>
                         
-                        <center><h5>
-                            Copy the Account Details, Pay and Submit Proof of Payment
-                        </h5></center>
-
-                        <p > <strong>Account Number:</strong> <a href="#">8140576399</a>                              
-                            <!-- <button class="btn btn-primary" onclick="copyText()"> copy <i data-feather="user" class="bi bi-files fea icon-sm icons"></i></button> -->
-                        </p>                    
-
-                        <p><strong>Bank:</strong> Opay Bank</p>
-
-
+                   
 
 
                                         </div>
@@ -111,6 +106,40 @@
         </div>
 
 </div>
+
+<script>
+
+    const paymentForm = document.getElementById('paymentForm');
+    paymentForm.addEventListener("submit", payWithPaystack, false);
+    
+    function payWithPaystack(e) {
+      e.preventDefault();
+    
+      let handler = PaystackPop.setup({
+        key: 'pk_live_05fdb160f71068b350b47a86b9145d0584a83847', // Replace with your public key
+        email: document.getElementById("email-address").value,
+        amount: document.getElementById("amount").value * 100,
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        // label: "Optional string that replaces customer email"
+        onClose: function(){
+          alert('Window closed.');
+        },
+        callback: function(response){
+          let message = 'Payment complete! Reference: ' + response.reference;
+          alert(message);
+        }
+      });
+    
+      handler.openIframe();
+    }
+    
+
+</script>
+
+
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
 
 <script>
 
