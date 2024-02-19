@@ -1,0 +1,128 @@
+{%extends 'dashboard/dashboard.html'%}
+
+
+{%block content%}
+
+
+<br> <br>
+<div class="my-properties">
+
+    {%if messages%}
+    {% for message in messages%}
+    <div class="alert alert-{{message.tags}}"> <p class="message">{{message}}</p></div>
+    {% endfor%}
+    {%endif%}
+
+    <!-- <section class="user-page section-padding pt-5"> -->
+        <!-- <div class="container-fluid"> -->
+            <!-- <div class="row"> -->
+               
+                    <div class="single-add-property">
+                      <center>
+                        <h3>Make Payment</h3>
+
+                      </center>  
+                        <div class="property-form-group">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {%csrf_token%}
+
+                            <div class="form">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <p>
+                                            <!-- <label for="title">Property Title</label> -->
+                                            <input type="text" name="name" id="title" class="form-control" placeholder="Enter Account Name" required>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <!-- <label for="description">Product Description</label> -->
+                                            <textarea id="description" name="description" class="form-control" placeholder="Description of Payment" required></textarea>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <input type="number" name="amount" id="title" class="form-control" placeholder="Enter Amount Paid" required>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                
+                           
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <label for="description">Proof (Payment Reciept) *</label>
+                                            <input type="file" name="proof" id="" class="form-control" required />
+                                        </p>
+                                    </div>
+                                </div>
+                       
+                      
+                                <!-- <div>
+                                    <input type="submit" class="btn btn-success"></button>
+                    
+                                </div> -->
+
+                            </div>
+                            <button class="btn btn-success">submit</button> <br> <br>
+
+
+
+
+
+                        </form>
+                        
+                        <center><h5>
+                            Copy the Account Details, Pay and Submit Proof of Payment
+                        </h5></center>
+
+                        <p > <strong>Account Number:</strong> <a href="#">8140576399</a>                              
+                            <!-- <button class="btn btn-primary" onclick="copyText()"> copy <i data-feather="user" class="bi bi-files fea icon-sm icons"></i></button> -->
+                        </p>                    
+
+                        <p><strong>Bank:</strong> Opay Bank</p>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+    
+                </div>
+            </form>
+
+            </div>
+
+
+            
+         
+
+
+
+        </div>
+
+</div>
+
+<script>
+
+    function copyText(){
+      let no = document.getElementById("acc_no");
+      no.select();
+      document.execCommand("copy");
+      alert("Text copied to clipboard!")
+    }
+
+
+
+  </script>
+
+{%endblock content%}

@@ -1,0 +1,269 @@
+{%extends "main.html"%}
+{%load static%}
+
+{%block content%}
+
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <!-- <main id="content" role="main"> -->
+
+
+	<!-- SECTION -->
+    <div class="section " style="background-image: url({% static 'img/back3.jpg' %}); 
+	  background-repeat: no-repeat; background-size:100%
+	 " id="back">
+        <!-- container -->
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+ 
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+	
+
+
+    	<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+				<center>
+					<h3 class="title">New Arrivals</h3>
+
+				</center>			
+							<!-- <div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+
+
+							{%for product in recent_products %}
+							<div class="col-md-3 col-xs-6" >
+								<a href="{%url 'product' product.id%}">
+
+								<div class="product" id="product-view">
+									<div class="product-img" >
+										<img src="{{product.photo1.url}}" alt="" >
+									</div>
+									<div class="product-body">
+										{% for cat in product.category.all %}
+                                                
+										<p class="product-category">category : {{ cat.name }}</p>
+
+										{% endfor %}
+										<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
+										<h4 class="product-price">NGN {{product.price}} <del class="product-old-price"></del></h4>
+										<div class="product-rating">
+										</div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+										</div>
+									</div>
+								  
+								</div>
+
+								</a>
+							</div>
+					
+							{%endfor%}
+							<!-- /product -->
+					
+							<div class="clearfix visible-sm visible-xs"></div>
+					
+					
+							<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
+					
+					
+					   
+							<div class="clearfix visible-sm visible-xs"></div>
+					
+					 
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+
+
+
+        		<!-- HOT DEAL SECTION -->
+		<div id="hot-deal" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="hot-deal">
+						
+							<h2 class="text-uppercase">Getting Started</h2>
+							<h4>
+
+							<ul>
+								<div>
+									<li>1. Signup For an Account</li>
+
+								</div> <br>
+								<div>
+									<li>2. Login to your Dashboard</li>
+
+								</div> <br>
+								<div>
+									<li>3. Add Products to your Store</li>
+
+								</div> <br>
+								<div>
+									<li>4. Go to your profile and get your store link</li>
+
+								</div> <br>
+								<div>
+									<li>5. Start Selling 🤑🤑🤑</li>
+
+								</div> <br>
+							</ul>
+
+						</h4>
+							<a class="primary-btn cta-btn" href="{%url 'products_view'%}">All Products</a>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /HOT DEAL SECTION -->
+
+		
+
+
+
+        
+
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+				<center>
+					<h3 class="title">Featured Products</h3>
+
+				</center>			
+							<!-- <div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+
+
+							{%for product in products reversed%}
+							<div class="col-md-3 col-xs-6" >
+								<a href="{%url 'product' product.id%}">
+
+								<div class="product" id="product-view">
+									<div class="product-img">
+										<img src="{{product.photo1.url}}" alt="">
+									</div>
+									<div class="product-body">
+										{% for cat in product.category.all %}
+                                                
+										<p class="product-category">category : {{ cat.name }}</p>
+
+										{% endfor %}
+										<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
+										<h4 class="product-price">NGN {{product.price}} <del class="product-old-price"></del></h4>
+										<div class="product-rating">
+										</div>
+										<div class="product-btns">
+											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+										</div>
+									</div>
+								  
+								</div>
+
+								</a>
+							</div>
+					
+							{%endfor%}
+							<!-- /product -->
+					
+							<div class="clearfix visible-sm visible-xs"></div>
+					
+					
+							<div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
+					
+					
+					   
+							<div class="clearfix visible-sm visible-xs"></div>
+					
+					 
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+
+    
+     {%endblock content%}

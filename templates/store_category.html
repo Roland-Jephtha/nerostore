@@ -1,0 +1,152 @@
+{%extends "main.html"%}
+{%load static%}
+
+{%block content%}
+
+
+
+
+
+
+<div id="store" class="col-md-12">
+    <br> <br>
+
+    <center><h2>{{store|title}}</h2></center> <br> <br>
+    
+
+
+
+ 
+
+    <!-- store top filter -->
+
+    <!-- store products -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <center>
+            
+                            <div class="col-md-6" id="header-search">
+                                <div class="header-search">
+                                    <!-- <form method="get">
+                                        
+                                        
+                                        <input class="input" placeholder="Search here" name="text" id="search">
+                                        <button class="search-btn">Search</button>
+                                    </form> -->
+                                </div>
+                            </div>
+            
+                
+            
+                        </center>			
+                        <!-- <div class="section-nav">
+                            <ul class="section-tab-nav tab-nav">
+                                <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+                                <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+                                <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+                                <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- /section title -->
+
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+
+                
+                    <div class="row">
+
+
+                        {%for product in products %}
+                        <div class="col-md-3 col-xs-6" >
+                            <a href="{%url 'product' product.id%}">
+
+                            <div class="product" id="product-view">
+                                <div class="product-img">
+                                    <img src="{{product.photo1.url}}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    {% for cat in product.category.all %}
+                                            
+                                    <p class="product-category">category : {{ cat.name }}</p>
+
+                                    {% endfor %}
+                                    <h3 class="product-name"><a href="#">{{product.name}}</a></h3>
+                                    <h4 class="product-price">NGN {{product.price}} <del class="product-old-price"></del></h4>
+                                    <div class="product-rating">
+                                    </div>
+                                    <div class="product-btns">
+                                        <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                    </div>
+                                </div>
+                              
+                            </div>
+
+                            </a>
+                        </div>
+                
+                        {%endfor%}
+                        <!-- /product -->
+                
+                        <div class="clearfix visible-sm visible-xs"></div>
+                
+                
+                        <div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
+                
+                
+                   
+                        <div class="clearfix visible-sm visible-xs"></div>
+                
+                 
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                </div>
+                <!-- Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /store products -->
+
+    <!-- store bottom filter -->
+    <div class="store-filter clearfix">
+        <!-- <span class="store-qty">Showing 20-100 products</span> -->
+        <ul class="store-pagination">
+            
+           
+            <!-- <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
+        </ul>
+    </div>
+    <!-- /store bottom filter -->
+</div>
+
+
+
+
+
+
+
+
+{%endblock content%}

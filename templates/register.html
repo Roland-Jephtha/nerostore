@@ -1,0 +1,165 @@
+
+{%extends "main.html"%}
+{%load static%}
+
+{%block content%}
+
+
+
+<div id="store" class="col-md-12">
+
+
+    <!-- store top filter -->
+
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <!-- section title -->
+                <div class="col-md-12"> <br> <br>
+
+                    {%if messages%}
+                    {% for message in messages%}
+                    
+
+                    <div class="alert alert-{{message.tags}}"> <p class="message" style="color: red;">{{message}}</p></div>
+                    {% endfor%}
+                    {%endif%}
+
+                    <div class="container py-5 h-100">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                          <div class="col col-xl-10">
+                            <div class="card" style="border-radius: 1rem;">
+                              <div class="row g-0">
+                                <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                  <img src="{% static 'img/signup2.jpg'%}"
+                                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; width:100%; height:100%" />
+                                </div>
+                                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                  <div class="card-body p-4 p-lg-5 text-black">
+                    
+                                      <h3 class="fw-normal mb-3 pb-3" id="login-text">
+                                        Register An Account for your Store
+                                      </h3> <br> 
+                    
+                                      <!-- login form -->
+                                    <form method="POST">
+                                        {%csrf_token%}
+                                        <div class="form-outline mb-4">
+                                          <label class="form-label">Username</label>
+                                          <input type="text"   name="username" class="form-control form-control-lg"  required/>
+                                        </div> <br> 
+                                        <div class="form-outline mb-4">
+                                          <label class="form-label">Email</label>
+                                          <input type="text"   name="email" class="form-control form-control-lg"  required/>
+                                        </div> <br> 
+                                        <div class="form-outline mb-4">
+                                          <label class="form-label">Business Name</label>
+                                          <input type="text"   name="business_name" class="form-control form-control-lg"  required/>
+                                        </div> <br> 
+                                        <div class="form-outline mb-4">
+                                          <label class="form-label">WhatsApp Number</label>
+                                          <input type="text"   name="number" class="form-control form-control-lg"  required/>
+                                        </div> <br> 
+                    
+                                        <div class="form-outline mb-4 form-group">
+                                          <label class="form-label" >Password</label>
+                                          <input type="password"  name="password" class="form-control form-control-lg" id = "password" required/>
+                                          <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">Show</button>
+                                        </div>
+                                        </div> <br>
+                    
+                                        <div class="pt-1 mb-4">
+                                          <button href="" class="btn btn-primary btn-lg btn-block" type="submit">
+                                            SIGNUP
+                                          </button>
+                                        </div>
+                    
+                                        <div>
+                                          <small class="text-muted">Already Have an Account?
+                                            <a class="ml-2" href="{% url 'signin'%}" style="font-weight: bold;">Login</a>
+                                          </small>
+                                        </div>
+                    
+                                    </form>
+                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="section-title">
+           
+                    </div>
+                </div>
+                <!-- /section title -->
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /store products -->
+
+    <!-- store bottom filter -->
+
+
+    <!-- /store bottom filter -->
+</div>
+
+
+
+
+
+
+
+
+    
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+
+        {%csrf_token%}
+
+        <p>username</p>
+        <input type="text" name="username" id="">
+        <p>business name</p>
+        <input type="text" name="business_name" id="">
+        <p>WhatsApp Number</p>
+        <input type="text" name="number" id="">
+        <p>Email</p>
+        <input type="email" name="email" id="">
+        <p>password</p>
+        <input type="password" name="password" id="">
+
+        <button>Submit</button>
+
+
+
+
+
+    </form>
+</body>
+</html>

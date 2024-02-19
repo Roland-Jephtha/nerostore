@@ -1,0 +1,74 @@
+{%extends 'dashboard/dashboard.html'%}
+
+
+{%block content%}
+
+<br> <br>
+
+<div class="my-properties">
+
+    {%if messages%}
+    {% for message in messages%}
+    <div class="alert alert-{{message.tags}}"> <p class="message">{{message}}</p></div>
+    {% endfor%}
+    {%endif%}
+    <table class="table-responsive">
+        <thead>
+            <tr>
+                <th class="pl-2">My Properties</th>
+                <th class="p-0"></th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                {%for product in products%}
+
+            <tr>
+                <td class="image myelist">
+                    <a href=""><img alt="my-properties-3" src="{{product.photo1.url}}" class="img-fluid"></a>
+                </td>
+                <td>
+                    <div class="inner">
+                        <a href="single-property-1.html">
+                            <h2>{{product.name}}</h2>
+                        </a>
+                        <figure><i class="lni-map-marker"></i> NGN {{product.price}}</figure>
+                       
+                    </div>
+                </td>
+                <td>{{product.created}}</td>
+                <td class="actions">
+                    <a href="{%url 'update_product' product.id%}" class="edit"><i class="fa fa-pencil"></i></a>
+                    <a href="{%url 'delete' product.id%}"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+
+            {%endfor%}
+
+        </tbody>
+    </table>
+    <div class="pagination-container">
+
+      
+        <nav>
+            <ul class="pagination">
+                {%if products.has_previous%}
+
+                <li class="page-item"><a class="btn btn-common" href="{%url 'view_product'%}?page={{products.previous_page_number}}">
+                    <i class="lni-chevron-left"></i> Previous </a></li>
+                {%endif%}
+
+
+                {%if products.has_next%}
+
+                <li class="page-item"><a class="btn btn-common" href="{%url 'view_product'%}?page={{products.next_page_number}}">Next <i class="lni-chevron-right"></i></a></li>
+                {%endif%}
+
+            
+            </ul>
+        </nav>
+    </div>
+</div>
+{%endblock content%}
