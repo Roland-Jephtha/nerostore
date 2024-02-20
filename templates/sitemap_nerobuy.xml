@@ -8,38 +8,83 @@
 
 
 <url>
-  <loc>https://nerobuy.onrender.com/</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://nerobuy.onrender.com/register</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/register</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://nerobuy.onrender.com/products_view</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/products_view</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://nerobuy.onrender.com/signin</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/signin</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://nerobuy.onrender.com/product/1</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/product/11</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://nerobuy.onrender.com/password-reset/</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/product/10</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/9</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/8</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/2</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/3</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/4</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/5</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/6</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/product/7</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nerostore.vercel.app/password-reset/</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://nerobuy.onrender.com/rojex</loc>
-  <lastmod>2023-12-19T10:20:24+00:00</lastmod>
+  <loc>https://nerostore.vercel.app/rojex</loc>
+  <lastmod>2024-02-20T22:06:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
