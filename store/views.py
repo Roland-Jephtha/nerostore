@@ -39,7 +39,7 @@ from django.template.loader import render_to_string
 
 
 def sitemap(request):
-    return render(request, 'sitemap_nerobuy.xml')
+    return render(request, 'sitemap.xml')
 
 # @login_required(login_url='signin')
 
