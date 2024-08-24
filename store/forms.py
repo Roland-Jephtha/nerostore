@@ -9,7 +9,10 @@ class CustomPasswordResetForm(PasswordResetForm):
         #Add css class
     def __init__(self, *args, **kwargs):
         super(CustomPasswordResetForm, self).__init__(*args, **kwargs)
-        self.fields['email'].widget.attrs.update({'class': 'pl-5 form-control'})
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+
+
+
 
 
 class ProfileForm(forms.ModelForm):
